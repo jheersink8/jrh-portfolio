@@ -3,7 +3,21 @@ import { LightModeIcon } from "./Icons/Light-mode";
 import { MuteIcon } from "./Icons/Mute";
 import { UnmuteIcon } from "./Icons/Unmute";
 
+import { useState } from "react";
+
 export default function Nav() {
+
+    let [darkMode, setDarkMode] = useState(false);
+    let [soundMode, setSoundMode] = useState(true);
+
+    const handleDarkClick = () => {
+        setDarkMode(!darkMode);
+    };
+
+    const handleMuteClick = () => {
+        setSoundMode(!soundMode);
+    };
+
     return (
         <nav className="navbar sticky-top navbar-expand-lg">
             <div className="container-fluid">
@@ -39,16 +53,17 @@ export default function Nav() {
                     </ul>
 
                     {/* Dark-mode/Light-mode */}
-                    <div className="me-0">
-                        <DarkModeIcon fill="#000000" width="24" height="24" />
-                        <LightModeIcon fill="#000000" width="36" height="36" />
-                    </div>
+                    <button className="me-0" type="button" onClick={handleDarkClick} >
+                        {darkMode ? <DarkModeIcon fill="#000000" width="36" height="36" /> : <LightModeIcon fill="#000000" width="36" height="36" />}
+                    </button>
+
+                    {/* Divider */}
                     <div className="mx-3">|</div>
+
                     {/* Mute/Unmute */}
-                    <div className="me-4">
-                        <UnmuteIcon fill="#000000" width="36" height="36" />
-                        <MuteIcon fill="#000000" width="38" height="38" />
-                    </div>
+                    <button className="me-4" type="button" onClick={handleMuteClick}>
+                        {soundMode ? <UnmuteIcon fill="#000000" width="36" height="36" /> : <MuteIcon fill="#000000" width="36" height="36" />}
+                    </button>
 
                 </div>
             </div>
