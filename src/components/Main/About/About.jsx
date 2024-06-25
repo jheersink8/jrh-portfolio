@@ -1,9 +1,21 @@
+import Blurb from './Content/Blurb';
+import Milestones from './Content/Milestones';
+import Future from './Content/Future';
+
 export default function About() {
     return (
-        <div>
-            <h2>Who I am</h2>
-            <h2>Mile stones</h2>
-            <h2>What's next</h2>
+        <div className='container'>
+            <div className='row'>
+                <div className='col-4 border'>
+                    <Blurb />
+                </div>
+                {/* <div className='col-4'>
+                    <Milestones />
+                </div>
+                <div className='col-4'>
+                    <Future />
+                </div> */}
+            </div>
         </div>
     )
 }
