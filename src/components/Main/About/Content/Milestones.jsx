@@ -1,12 +1,15 @@
-export default function Milestones () {
+export default function Milestones(props) {
     return (
-        <div className="container"><ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            </ul></div>
+        <div className="container">
+            <ul>
+                {props.timeline.map(event => (
+                    <li key={event.id}>
+                        {event.date}
+                        {event.description}
+                    </li>
+                ))}
+
+            </ul>
+        </div>
     )
-    };
+};

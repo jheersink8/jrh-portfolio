@@ -1,5 +1,5 @@
 // Array of objects that contain the information for each event. This information is used to populate the Timeline component.
-const timelineEvents = [{
+const timeline = [{
     id: 1,
     date: '2010',
     description: 'Married the Best Person on Planet Earth'
@@ -36,4 +36,4 @@ const timelineEvents = [{
 }
 ];
 
-export default timelineEvents;
+export default timeline;
