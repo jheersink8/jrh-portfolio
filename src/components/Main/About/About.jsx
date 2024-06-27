@@ -3,12 +3,12 @@ import Milestones from './Content/Milestones';
 import timeline from './Content/timeline';
 import Future from './Content/Future';
 import { useState } from 'react';
-import './Content/carousel.css';
+import './Content/styles.css';
 
 export default function About() {
-    const [style, runStyle] = useState('red')
+    const [style, runStyle] = useState('blurb')
 
-    const runTest = () => {
+    const runBlurb = () => {
         runStyle((prevStyle) => (prevStyle === 'red' ? 'blue' : 'red'));
     };
 
@@ -18,13 +18,13 @@ export default function About() {
             <div className='container'>
                 <div className='row border border-danger'>
                     <div className='col-2 d-flex flex-column '>
-                        <button >Who I am</button>
-                        <button >My Milestones</button>
+                        <button onClick={runBlurb} >Who I am</button>
+                        <button>My Milestones</button>
                         <button >Future Roadmap</button>
                     </div>
-                    <div className='col-10'>
-                        {/* <Blurb /> */}
-                        <Milestones timeline={timeline} />
+                    <div  className='col-10'>
+                        <Blurb className={style}/>
+                        {/* <Milestones timeline={timeline} /> */}
                     </div>
                 </div>
             </div>
