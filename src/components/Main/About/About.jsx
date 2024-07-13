@@ -6,26 +6,22 @@ import { useState } from 'react';
 import './Content/styles.css';
 
 export default function About() {
-    const [style, runStyle] = useState('blurb')
-
-    const runBlurb = () => {
-        runStyle((prevStyle) => (prevStyle === 'red' ? 'blue' : 'red'));
-    };
+    const [state, setState] = useState('Blurb');
 
     return (
         <div>
             <h2>About Me</h2>
             <div className='container'>
-                <div className='row border border-danger'>
+                <div className='row'>
                     <div className='col-2 d-flex flex-column '>
-                        <button onClick={runBlurb} >Who I am</button>
-                        <button>My Milestones</button>
-                        <button >Future Roadmap</button>
+                        <button onClick={() => setState('Blurb')}>Who I am</button>
+                        <button onClick={() => setState('Milestones')}>My Milestones</button>
+                        <button onClick={() => setState('Future')}>Future Roadmap</button>
                     </div>
-                    <div  className='col-10'>
-                        {/* <Blurb className={style}/> */}
-                        {/* <Milestones timeline={timeline} /> */}
-
+                    <div className='col-10'>
+                        {state === 'Blurb' && <Blurb />}
+                        {state === 'Milestones' && <Milestones timeline={timeline} />}
+                        {state === 'Future' && <Future />}
                     </div>
                 </div>
             </div>
