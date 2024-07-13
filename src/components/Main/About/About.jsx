@@ -23,8 +23,9 @@ export default function About() {
                         <button >Future Roadmap</button>
                     </div>
                     <div  className='col-10'>
-                        <Blurb className={style}/>
+                        {/* <Blurb className={style}/> */}
                         {/* <Milestones timeline={timeline} /> */}
+
                     </div>
                 </div>
             </div>

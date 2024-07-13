@@ -14,9 +14,9 @@ function App() {
       <Intro />
       <About />
       <Projects />
-      <Resume />
       <Skills />
-    </>
+      <Resume />
+     </>
   )
 }
 
