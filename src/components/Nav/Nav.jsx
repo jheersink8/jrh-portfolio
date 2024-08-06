@@ -2,14 +2,14 @@ import { DarkModeIcon } from "./Icons/Dark-mode";
 import { LightModeIcon } from "./Icons/Light-mode";
 import { MuteIcon } from "./Icons/Mute";
 import { UnmuteIcon } from "./Icons/Unmute";
-
+import { createContext, useContext } from "react";
 import { useState } from "react";
 
 export default function Nav() {
-
     let [darkMode, setDarkMode] = useState(false);
     let [soundMode, setSoundMode] = useState(true);
-
+    const ThemeContext = createContext(darkMode);
+    const SoundContext = createContext(soundMode);
     const handleDarkClick = () => {
         setDarkMode(!darkMode);
     };
@@ -17,6 +17,9 @@ export default function Nav() {
     const handleMuteClick = () => {
         setSoundMode(!soundMode);
     };
+
+    console.log(ThemeContext);
+    console.log(SoundContext);
 
     return (
         <nav className="navbar sticky-top navbar-expand-lg">
